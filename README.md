@@ -11,13 +11,13 @@ This config for SketchyBar includes:
 - A clock with hours, minutes, and AM/PM indicators
 - Calendar
 - Aerospace workspace labels with custom icons
-  - Requires [Aerospace](https://github.com/iyioon/aerospace) to be installed.
-- Front app indicator with scrollable label.
+    - Requires [Aerospace](https://github.com/iyioon/aerospace) to be installed
+- Front app indicator with scrollable label
 - Icons for
-  - Themes (light/dark)
-  - Volume indicator (click to open Sound preferences
-  - CPU usage indicator (click to open Activity Monitor)
-  - Battery indicator (click to open Battery preferences)
+    - Themes (light/dark)
+    - Volume indicator (click to open Sound preferences
+    - CPU usage indicator (click to open Activity Monitor)
+    - Battery indicator (click to open Battery preferences)
 
 ## Installation
 
