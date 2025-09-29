@@ -1,8 +1,8 @@
-# SketchyBar
+# SketchyBar Configuration
 
-> [!Info] About
-> My config for SketchyBar, a highly customizable menu bar for macOS
-> [Documentation](https://felixkratz.github.io/SketchyBar/setup)
+My config for [SketchyBar](https://felixkratz.github.io/SketchyBar/setup), a highly customizable menu bar for macOS
+
+![SketchyBar Screenshot](./thumnail.png)
 
 ## About
 
