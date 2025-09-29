@@ -2,21 +2,41 @@
 
 export PLUGIN_DIR="$HOME/.config/sketchybar/plugins"
 
-# Comment/uncomment one of the two color schemes below to switch
-# export OX_BG="0xff1b2735"   # deep navy background
-# export OX_FG="0xffa3d5ff"   # light cyan-blue foreground
-# export OX_DIM="0xff4a90e2"  # medium glossy blue
-# export OX_MG="0xff5ac8fa"   # aqua blue (macOS accent style)
-# export OX_ORG="0xff82e0ff"  # soft electric blue
-# export OX_BORDER="0xff2a3a4a"   # dark bluish-grey
+# Active theme identifier (persisted for toggling)
+export OX_THEME="dark"
 
-# Alternative color scheme (cyberdream)
-export OX_BG="0xff16181a"     # deep cyberdream dark background
-export OX_FG="0xffe0e0e0"     # bright neutral foreground
-export OX_DIM="0xff7b8496"    # dim grey-blue for inactive text
-export OX_MG="0xffff5ef1"     # vivid magenta accent (#ff5ef1)
-export OX_ORG="0xff5ef1ff"    # cyan accent for contrast
-export OX_BORDER="0xff2a3a4a" # subtle dark bluish border
+# Dark palette (cyberdream)
+export OX_BG_DARK="0xff16181a"
+export OX_FG_DARK="0xffe0e0e0"
+export OX_DIM_DARK="0xff7b8496"
+export OX_MG_DARK="0xffff5ef1"
+export OX_ORG_DARK="0xff5ef1ff"
+export OX_BORDER_DARK="0xff2a3a4a"
+
+# Light palette
+export OX_BG_LIGHT="0xfff5f5f5"
+export OX_FG_LIGHT="0xff2d2d2d"
+export OX_DIM_LIGHT="0xff666666"
+export OX_MG_LIGHT="0xff007acc"
+export OX_ORG_LIGHT="0xff0080ff"
+export OX_BORDER_LIGHT="0xffd0d0d0"
+
+if [[ "$OX_THEME" == "light" ]]; then
+  export OX_BG="$OX_BG_LIGHT"
+  export OX_FG="$OX_FG_LIGHT"
+  export OX_DIM="$OX_DIM_LIGHT"
+  export OX_MG="$OX_MG_LIGHT"
+  export OX_ORG="$OX_ORG_LIGHT"
+  export OX_BORDER="$OX_BORDER_LIGHT"
+else
+  export OX_THEME="dark"
+  export OX_BG="$OX_BG_DARK"
+  export OX_FG="$OX_FG_DARK"
+  export OX_DIM="$OX_DIM_DARK"
+  export OX_MG="$OX_MG_DARK"
+  export OX_ORG="$OX_ORG_DARK"
+  export OX_BORDER="$OX_BORDER_DARK"
+fi
 
 export SB_BAR=(
   position=left

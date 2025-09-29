@@ -20,6 +20,7 @@ sb_wifi right
 sb_battery right
 sb_volume right
 sb_separator right 12 12
+sb_theme_toggle right
 
 ##################
 
