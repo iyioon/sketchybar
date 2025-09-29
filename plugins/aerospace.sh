@@ -5,30 +5,32 @@ sid="$1"
 
 # --- label mapping (first 3 spaces use icons; others use the number) ---
 case "$sid" in
-  1) LABEL="" ;;
-  2) LABEL="" ;;
+  1) LABEL="󰍹" ;;
+  2) LABEL="" ;;
   3) LABEL="" ;; 
+  4) LABEL="󰽰" ;;
   *) LABEL="$sid" ;;
 esac
 
-# --- workspace state (icon slot) ---
+# --- workspace state ---
 # Count windows in this workspace
 win_count=$(aerospace list-windows --workspace "$sid" 2>/dev/null | wc -l | tr -d ' ')
 
-ACTIVE_ICON=""   # solid circle (focused)
-OCC_ICON=""      # dot-circle  (has windows)
-EMPTY_ICON=""    # thin circle (empty)
-
 if [ "$sid" = "$FOCUSED_WORKSPACE" ]; then
-  ICON="$ACTIVE_ICON"; ICON_COLOR="$OX_MG"     # accent for focused
+  LABEL_COLOR="$OX_MG"        # accent for focused workspace
 elif [ "${win_count:-0}" -gt 0 ]; then
-  ICON="$OCC_ICON";   ICON_COLOR="$OX_DIM"     # dim for occupied
+  LABEL_COLOR="$OX_FG"        # foreground for occupied workspace
 else
-  ICON="$EMPTY_ICON"; ICON_COLOR="$OX_DIM"     # dim for empty
+  LABEL_COLOR="$OX_DIM"       # dim for empty workspace
 fi
 
 # --- apply ---
 sketchybar --set "$NAME" \
-  label="$LABEL"           label.color="$OX_FG" \
-  icon="$ICON"             icon.color="$ICON_COLOR" \
+  label="$LABEL" \
+  label.color="$LABEL_COLOR" \
+  label.align=center \
+  label.font.size=15 \
+  icon.drawing=off \
+  icon.padding_left=0 \
+  icon.padding_right=0 \
   background.drawing=off
