@@ -2,25 +2,33 @@
 source "$HOME/.config/sketchybar/globals.sh"
 
 sid="$1"
+
+# --- label mapping (first 3 spaces use icons; others use the number) ---
+case "$sid" in
+  1) LABEL="" ;;
+  2) LABEL="" ;;
+  3) LABEL="" ;; 
+  *) LABEL="$sid" ;;
+esac
+
+# --- workspace state (icon slot) ---
+# Count windows in this workspace
 win_count=$(aerospace list-windows --workspace "$sid" 2>/dev/null | wc -l | tr -d ' ')
 
-# Nerd Font circle icons (all same baseline/size)
-ACTIVE_ICON=""   # solid circle
-OCCUPIED_ICON="" # dot-circle
-EMPTY_ICON=""    # thin circle
+ACTIVE_ICON=""   # solid circle (focused)
+OCC_ICON=""      # dot-circle  (has windows)
+EMPTY_ICON=""    # thin circle (empty)
 
-# Decide state
 if [ "$sid" = "$FOCUSED_WORKSPACE" ]; then
-  icon="$ACTIVE_ICON"; icon_color="$OX_MG"
+  ICON="$ACTIVE_ICON"; ICON_COLOR="$OX_MG"     # accent for focused
 elif [ "${win_count:-0}" -gt 0 ]; then
-  icon="$OCCUPIED_ICON"; icon_color="$OX_DIM"
+  ICON="$OCC_ICON";   ICON_COLOR="$OX_DIM"     # dim for occupied
 else
-  icon="$EMPTY_ICON"; icon_color="$OX_DIM"
+  ICON="$EMPTY_ICON"; ICON_COLOR="$OX_DIM"     # dim for empty
 fi
 
+# --- apply ---
 sketchybar --set "$NAME" \
-  icon="$icon" \
-  icon.color="$icon_color" \
-  label="$sid" \
-  label.color="$OX_FG" \
+  label="$LABEL"           label.color="$OX_FG" \
+  icon="$ICON"             icon.color="$ICON_COLOR" \
   background.drawing=off

@@ -1,12 +1,22 @@
 #!/bin/bash
 
 export PLUGIN_DIR="$HOME/.config/sketchybar/plugins"
-export OX_BG="0xff1b2735"   # deep navy background
-export OX_FG="0xffa3d5ff"   # light cyan-blue foreground
-export OX_DIM="0xff4a90e2"  # medium glossy blue
-export OX_MG="0xff5ac8fa"   # aqua blue (macOS accent style)
-export OX_ORG="0xff82e0ff"  # soft electric blue
-export OX_BORDER="0xff2a3a4a"   # dark bluish-grey
+
+# Comment/uncomment one of the two color schemes below to switch
+# export OX_BG="0xff1b2735"   # deep navy background
+# export OX_FG="0xffa3d5ff"   # light cyan-blue foreground
+# export OX_DIM="0xff4a90e2"  # medium glossy blue
+# export OX_MG="0xff5ac8fa"   # aqua blue (macOS accent style)
+# export OX_ORG="0xff82e0ff"  # soft electric blue
+# export OX_BORDER="0xff2a3a4a"   # dark bluish-grey
+
+# Alternative color scheme (cyberdream)
+export OX_BG="0xff16181a"     # deep cyberdream dark background
+export OX_FG="0xffe0e0e0"     # bright neutral foreground
+export OX_DIM="0xff7b8496"    # dim grey-blue for inactive text
+export OX_MG="0xffff5ef1"     # vivid magenta accent (#ff5ef1)
+export OX_ORG="0xff5ef1ff"    # cyan accent for contrast
+export OX_BORDER="0xff2a3a4a" # subtle dark bluish border
 
 export SB_BAR=(
   position=left
@@ -14,8 +24,8 @@ export SB_BAR=(
   sticky=on
   topmost=off
   shadow=on
-  y_offset=10
-  margin=10
+  y_offset=5
+  margin=5
   padding_left=16
   padding_right=16
   color="$OX_BG"
