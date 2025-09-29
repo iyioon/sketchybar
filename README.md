@@ -1,7 +1,7 @@
 # SketchyBar
 
 > [!Info] About
-> Config for SketchyBar, a highly customizable menu bar for macOS
+> My config for SketchyBar, a highly customizable menu bar for macOS
 > [Documentation](https://felixkratz.github.io/SketchyBar/setup)
 
 ## Installation
@@ -15,6 +15,7 @@ Also make sure to have dependencies installed:
 
 ```bash
 brew install --cask font-hack-nerd-font
+brew install --cask font-source-code-pro
 ```
 
 Copy over the config file:
@@ -39,4 +40,4 @@ chmod +x name/of/plugin.sh
 
 ## Customization
 
-Refer to this [discussion](https://github.com/FelixKratz/SketchyBar/discussions/47?sort=top)
+Refer to this [discussion](https://github.com/FelixKratz/SketchyBar/discussions/47?sort=top) for more examples.
