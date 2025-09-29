@@ -11,15 +11,18 @@ sketchybar --add event front_app_switched
 sb_clock left
 sb_separator left 14 14
 sb_date left
-sb_separator left 20 16
+sb_separator left 14 14
 sb_spaces left
+sb_separator left 14 14
+sb_front_app left
+
 
 ###### Btm ######
 
 sb_wifi right
 sb_battery right
 sb_volume right
-sb_separator right 12 12
+sb_separator right 14 14
 sb_theme_toggle right
 
 ##################
