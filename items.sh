@@ -65,7 +65,8 @@ sb_battery() {
       script="$PLUGIN_DIR/battery.sh" \
       update_freq=120 \
       label.color=$OX_FG \
-      icon.color=$OX_FG
+      icon.color=$OX_FG \
+      click_script="open 'x-apple.systempreferences:com.apple.preference.battery'"
 }
 
 sb_volume() {
@@ -75,7 +76,28 @@ sb_volume() {
     --set volume \
       script="$PLUGIN_DIR/volume.sh" \
       label.color=$OX_FG \
-      icon.color=$OX_FG
+      icon.color=$OX_FG \
+      click_script="open 'x-apple.systempreferences:com.apple.preference.sound'"
+}
+
+sb_cpu() {
+  sketchybar \
+    --add item cpu "$1" \
+    --subscribe cpu system_woke \
+    --set cpu \
+      script="$PLUGIN_DIR/cpu.sh" \
+      update_freq=5 \
+  icon="􀫥" \
+  icon.font.size=15 \
+  icon.color="$OX_FG" \
+      label="--%" \
+      label.font.family="Hack Nerd Font Mono" \
+      label.font.size=11 \
+  label.color="$OX_FG" \
+      padding_left=6 \
+      padding_right=6 \
+      background.drawing=off \
+      click_script="open -a 'Activity Monitor'"
 }
 
 sb_spaces() {

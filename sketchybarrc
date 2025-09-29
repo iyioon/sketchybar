@@ -21,6 +21,7 @@ sb_front_app left
 
 sb_wifi right
 sb_battery right
+sb_cpu right
 sb_volume right
 sb_separator right 14 14
 sb_theme_toggle right
