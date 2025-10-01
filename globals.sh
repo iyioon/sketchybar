@@ -6,20 +6,20 @@ export PLUGIN_DIR="$HOME/.config/sketchybar/plugins"
 export OX_THEME="dark"
 
 # Dark palette (cyberdream)
-export OX_BG_DARK="0xff16181a"
+export OX_BG_DARK="0xe616181a"
 export OX_FG_DARK="0xffe0e0e0"
 export OX_DIM_DARK="0xff7b8496"
 export OX_MG_DARK="0xffff5ef1"
 export OX_ORG_DARK="0xff5ef1ff"
-export OX_BORDER_DARK="0xff2a3a4a"
+export OX_BORDER_DARK="0xff3a3a3c"
 
 # Light palette
-export OX_BG_LIGHT="0xfff5f5f5"
+export OX_BG_LIGHT="0xe6f5f5f5"
 export OX_FG_LIGHT="0xff2d2d2d"
 export OX_DIM_LIGHT="0xff666666"
 export OX_MG_LIGHT="0xff007acc"
 export OX_ORG_LIGHT="0xff0080ff"
-export OX_BORDER_LIGHT="0xffd0d0d0"
+export OX_BORDER_LIGHT="0xffc6c6c8"
 
 if [[ "$OX_THEME" == "light" ]]; then
   export OX_BG="$OX_BG_LIGHT"
@@ -51,8 +51,9 @@ export SB_BAR=(
   color="$OX_BG"
   border_color="$OX_BORDER"
   border_width=1
-  corner_radius=10
+  corner_radius=12
   font_smoothing=on
+  blur_radius=30
 )
 
 export SB_DEFAULT=(
