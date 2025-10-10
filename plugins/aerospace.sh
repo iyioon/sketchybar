@@ -8,7 +8,7 @@ case "$sid" in
   1) LABEL="󰍹" ;;
   2) LABEL="" ;;
   3) LABEL="" ;; 
-  4) LABEL="󰽰" ;;
+  4) LABEL="󰽺" ;;
   *) LABEL="$sid" ;;
 esac
 

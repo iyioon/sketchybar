@@ -6,7 +6,7 @@ export PLUGIN_DIR="$HOME/.config/sketchybar/plugins"
 export OX_THEME="dark"
 
 # Dark palette (cyberdream)
-export OX_BG_DARK="0xe616181a"
+export OX_BG_DARK="0x0016181a"
 export OX_FG_DARK="0xffe0e0e0"
 export OX_DIM_DARK="0xff7b8496"
 export OX_MG_DARK="0xffff5ef1"

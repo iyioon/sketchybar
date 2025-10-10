@@ -3,6 +3,11 @@
 CONFIG_DIR="$HOME/.config/sketchybar"
 . "$CONFIG_DIR/globals.sh"
 
+ICONS_FILE="$CONFIG_DIR/icons.sh"
+if [[ -f "$ICONS_FILE" ]]; then
+  . "$ICONS_FILE"
+fi
+
 # Resolve current application name from event info or via System Events
 APP_NAME="$INFO"
 
@@ -22,16 +27,25 @@ if [[ -z "$APP_NAME" ]]; then
   APP_NAME="Finder"
 fi
 
-MAX_CHARS=48
 APP_NAME=$(printf "%s" "$APP_NAME" | sed -e 's/^ *//' -e 's/ *$//')
-APP_NAME=${APP_NAME:0:$MAX_CHARS}
 
 if [[ -z "$APP_NAME" ]]; then
   APP_NAME="Finder"
 fi
 
+ICON_LOOKUP=$(printf "%s" "$APP_NAME" | tr '[:lower:]' '[:upper:]' | tr ' ' '_' | tr -cd 'A-Z0-9_')
+ICON_VALUE=""
+
+if [[ -n "$ICON_LOOKUP" ]]; then
+  ICON_VALUE="${!ICON_LOOKUP}"
+fi
+
+if [[ -z "$ICON_VALUE" ]]; then
+  ICON_VALUE="$APPLE"
+fi
+
 sketchybar --set "$NAME" \
-  icon.drawing=off \
-  label="${APP_NAME}" \
-  label.color="$OX_FG" \
-  label.alignment=center
+  icon="$ICON_VALUE" \
+  icon.color="$OX_FG" \
+  icon.drawing=on \
+  label.drawing=off
